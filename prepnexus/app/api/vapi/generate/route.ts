@@ -8,11 +8,14 @@ export async function GET(){
 }
 
 export async function POST(request: Request) {
-    const { type, role, level, techstack, amount, userid, company } = await request.json();
+    const { type, role, level, techstack, amount, userId, company } = await request.json();
 
     try{
         const { text: questions } = await generateText({
-            model: google('gemini-2.0-flash-001'),
+            model: google('gemini-2.0-flash-001', {
+                apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY!,
+              }),
+              
             prompt:`Generate a list of interview questions tailored for the following job role:
 
             - Company: ${company}
@@ -43,7 +46,7 @@ export async function POST(request: Request) {
             level: level,
             techstack: techstack.split(','),
             questions: JSON.parse(questions.replace(/```json/g, '').replace(/```/g, '').trim()),
-            userId: userid,
+            userId: userId,
             finalized: true,
             coverImage: getCompanyLogo(company),
             createdAt: new Date().toISOString(),

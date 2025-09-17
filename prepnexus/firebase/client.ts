@@ -11,14 +11,15 @@ import { getFirestore } from "firebase/firestore";
 
 // ✅ Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyBAbW7x_phtbAG83dH7JROAF-x-hwjvIJQ",
-  authDomain: "prepnexus-b9328.firebaseapp.com",
-  projectId: "prepnexus-b9328",
-  storageBucket: "prepnexus-b9328.appspot.com",
-  messagingSenderId: "905643568779",
-  appId: "1:905643568779:web:9aa9d37eb1f39716a8ee8e",
-  measurementId: "G-YVQFD0QLDX"
+  apiKey: "AIzaSyALY9JF-Kp8eUJ9fpvt3g5WuIYHcmr5tHY",
+  authDomain: "prepin-56e1f.firebaseapp.com",
+  projectId: "prepin-56e1f",
+  storageBucket: "prepin-56e1f.firebasestorage.app",
+  messagingSenderId: "421642568057",
+  appId: "1:421642568057:web:a1c917b6e5d93749ae6fa8",
+  measurementId: "G-SX0XYKBVNH"
 };
+
 
 // ✅ Initialize Firebase
 export const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();

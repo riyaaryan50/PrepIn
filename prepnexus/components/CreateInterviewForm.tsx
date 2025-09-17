@@ -34,7 +34,7 @@ const CreateInterview = ({ userId }: { userId: string }) => {
       ...formData,
       amount: Number(formData.amount),
       techstack: formData.techstack,
-      userid: userId,
+      userId: userId,
     };
 
     console.log("Sending payload:", payload);
